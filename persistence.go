@@ -12,8 +12,8 @@ import (
 var state map[string]string
 var mutex sync.Mutex
 
-// Store stores a string in a persistent key-value map
-func Store(key string, value string) {
+// Set stores a string in a persistent key-value map
+func Set(key string, value string) {
 	mutex.Lock()
 	state[key] = value
 	if !files.Exists("data/persistence") {
