@@ -13,8 +13,7 @@ go get -u github.com/325gerbils/persistence
 
 import "github.com/325gerbils/persistence"
 
-var data = "value"
-
+data := "value"
 persistence.Store("key", data)
 
 
@@ -24,11 +23,11 @@ persistence.Store("key", data)
 
 import (
     "fmt"
-
+    
     "github.com/325gerbils/persistence"
 )
 
-data = persistence.Get("key")
+data := persistence.Get("key")
 
 // Prints "value"
 fmt.Println(data)
