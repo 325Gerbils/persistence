@@ -25,7 +25,7 @@ func Set(key string, value string) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		files.Save("data/persistence", string(jsondata))
+		files.Save(string(jsondata), "data/persistence")
 	}
 	mutex.Unlock()
 }
