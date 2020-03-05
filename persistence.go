@@ -14,6 +14,9 @@ var mutex sync.Mutex
 
 // Set stores a string in a persistent key-value map
 func Set(key string, value string) {
+	if state == nil {
+		state = make(map[string]string)
+	}
 	mutex.Lock()
 	state[key] = value
 	if !files.Exists("data/persistence") {
